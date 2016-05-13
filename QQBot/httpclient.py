@@ -56,7 +56,7 @@ class HttpClient(object):
             except BadStatusLine:
                 raise ServerResponseEmpty("Server response error, check the network connections: %s" % url)
             self._cookie.save('cookie/cookie.data', ignore_discard=True, ignore_expires=True)
-            return tmp_req.read().decode('gbk')
+            return tmp_req.read().decode('utf8')
         except urllib2.HTTPError as e:
             return e.read()
 
