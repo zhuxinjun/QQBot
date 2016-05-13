@@ -43,7 +43,7 @@ class HttpClient(object):
             req.add_header('Referer', refer or SMART_QQ_REFER)
             tmp_req = urllib2.urlopen(req)
             self._cookie.save('cookie/cookie.data',ignore_discard=True,ignore_expires=True)
-            return tmp_req.read().decode('gbk')
+            return tmp_req.read().decode('utf8')
         except urllib2.HTTPError as e:
             return e.read()
 
