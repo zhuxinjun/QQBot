@@ -392,14 +392,16 @@ class QQBot(object):
                 'info':info
             }
         )
-        print(response)
         try:
             ret = json.loads(response)
         except ValueError:
             logger.warning("Tulin connect fail, response decode error.")
             return
         logger.info("Tulin connect succeed. account: %s" % ret)
-        return ret['text']
+        if 'url' in response:
+            return ret['text']+'\r\n'+ret['url']
+        else:
+            return ret['text']
 
     # 发送群消息
     def send_qun_msg(self, reply_content, guin, msg_id, fail_times=0):
