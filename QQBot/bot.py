@@ -398,10 +398,29 @@ class QQBot(object):
             logger.warning("Tulin connect fail, response decode error.")
             return
         logger.info("Tulin connect succeed. account: %s" % ret)
-        if 'url' in response:
-            return ret['text']+'\r\n'+ret['url']
-        else:
-            return ret['text']
+        code=ret['code']
+        result=''
+        if code==100000:
+            result= ret['text']
+            if len(result)>250:
+                result=result[0:100]+'...'+result[-150:len(result)]
+        elif code==200000:
+            result= ret['text']+'\r\n'+ret['url']
+        elif code==302000:
+            for item in ret['list']:
+                result_temp=result+item['article']+'\r\n'+item['detailurl']+'\r\n'
+                if len(result)>250:
+                    break
+                result=result+item['article']+'\r\n'+item['detailurl']+'\r\n'
+        elif code==305000:
+            for item in ret['list']:
+                result=result+item['trainnum']+'：'+item['start']+'-'+item['terminal']+' '+item['starttime']+'-'+item['endtime']
+        elif code==308000:
+            for item in ret['list']:
+                result=result+item['name']+'：'+item['info']+'\r\n'+item['detailurl']
+                break;
+        logger.info("Tulin message: %s" % result)
+        return result
 
     # 发送群消息
     def send_qun_msg(self, reply_content, guin, msg_id, fail_times=0):
@@ -419,10 +438,10 @@ class QQBot(object):
             )
             rsp = self.client.post(req_url, data, SMART_QQ_REFER)
             rsp_json = json.loads(rsp)
-            if 'retcode' in rsp_json and rsp_json['retcode'] not in MESSAGE_SENT:
+            logger.debug("RESPONSE send_qun_msg: Reply response: " + str(rsp))
+            if 'retcode' in rsp_json:
                 raise ValueError("RUNTIMELOG reply group chat error" + str(rsp_json['retcode']))
             logger.info("RUNTIMELOG send_qun_msg: Reply '{}' successfully.".format(reply_content))
-            logger.debug("RESPONSE send_qun_msg: Reply response: " + str(rsp))
             return rsp_json
         except:
             logger.warning("RUNTIMELOG send_qun_msg fail")
@@ -430,7 +449,7 @@ class QQBot(object):
                 logger.warning("RUNTIMELOG send_qun_msg: Response Error.Wait for 2s and Retrying." + str(fail_times))
                 logger.debug("RESPONSE send_qun_msg rsp:" + str(rsp))
                 time.sleep(2)
-                self.send_qun_msg(guin, reply_content, msg_id, fail_times + 1)
+                self.send_qun_msg(reply_content,guin, msg_id, fail_times + 1)
             else:
                 logger.warning("RUNTIMELOG send_qun_msg: Response Error over 5 times.Exit.reply content:" + str(reply_content))
                 return False
