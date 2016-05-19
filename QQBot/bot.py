@@ -405,19 +405,19 @@ class QQBot(object):
             if len(result)>250:
                 result=result[0:100]+'...'+result[-150:len(result)]
         elif code==200000:
-            result= ret['text']+'\r\n'+ret['url']
+            result= ret['text']+'\n'+ret['url']
         elif code==302000:
             for item in ret['list']:
-                result_temp=result+item['article']+'\r\n'+item['detailurl']+'\r\n'
+                result_temp=result+item['article']+'\n'+item['detailurl']+'\n'
                 if len(result)>250:
                     break
-                result=result+item['article']+'\r\n'+item['detailurl']+'\r\n'
+                result=result+item['article']+'\n'+item['detailurl']+'\n'
         elif code==305000:
             for item in ret['list']:
                 result=result+item['trainnum']+'：'+item['start']+'-'+item['terminal']+' '+item['starttime']+'-'+item['endtime']
         elif code==308000:
             for item in ret['list']:
-                result=result+item['name']+'：'+item['info']+'\r\n'+item['detailurl']
+                result=result+item['name']+'：'+item['info']+'\n'+item['detailurl']
                 break;
         logger.info("Tulin message: %s" % result)
         return result

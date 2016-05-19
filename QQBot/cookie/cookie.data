@@ -1,0 +1,21 @@
+#LWP-Cookies-2.0
+Set-Cookie3: ETK=""; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: pt_clientip=2ddb0af0891c85c0; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: pt_login_sig="HzdCQucQvBoIG1l9EkIGups1N*q3W2toa*NelHZ3F6dm3JmM1BnGskSKERrkV3rh"; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: pt_serverip=ea970a8f82614e4f; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: ptnick_592663902=526f626f74; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: qrsig=VYju9M6ZI690NTz53tHj9o1BjyfwmTi2p0argyhyVI1Dk09SI3ESVRYvjxbbMjtS; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: superkey=xsobfz6lMI5pSzTjHRPs5ZgpkH0ssQBJWPRQWtvF0F0_; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; HttpOnly=None; version=0
+Set-Cookie3: supertoken=1460173955; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: superuin=o0592663902; path="/"; domain=".ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: RK=sT9iJ6GHQ5; path="/"; domain=".qq.com"; path_spec; expires="2026-05-16 09:59:50Z"; version=0
+Set-Cookie3: pt2gguin=o0592663902; path="/"; domain=".qq.com"; path_spec; expires="2020-01-02 00:00:00Z"; version=0
+Set-Cookie3: ptisp=ctc; path="/"; domain=".qq.com"; path_spec; discard; version=0
+Set-Cookie3: ptwebqq=f5ca250e9e79db06dea348ffd158027fbc421dcc661981b9e37286c25f597cbc; path="/"; domain=".qq.com"; path_spec; discard; version=0
+Set-Cookie3: skey="@0X9CQuwJT"; path="/"; domain=".qq.com"; path_spec; discard; version=0
+Set-Cookie3: uin=o0592663902; path="/"; domain=".qq.com"; path_spec; discard; version=0
+Set-Cookie3: pt_user_id=12927727541230240097; path="/"; domain=".ui.ptlogin2.qq.com"; path_spec; expires="2026-05-16 09:58:41Z"; version=0
+Set-Cookie3: ptui_identifier=000D08FC0623456F5D25164B78874601232D5E4860CEED4C54D4F6A744; path="/"; domain=".ui.ptlogin2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: p_skey="0yoDc976875dfdFOUD7UN4ljZ*wHHYcxJLETYq7vcg4_"; path="/"; domain=".web2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: p_uin=o0592663902; path="/"; domain=".web2.qq.com"; path_spec; discard; version=0
+Set-Cookie3: pt4_token=SFVTAIzLk5iIG0cDl8nASu5UpW9qyAeYl4X9W4m7Lrk_; path="/"; domain=".web2.qq.com"; path_spec; discard; version=0
